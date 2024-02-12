@@ -1,22 +1,28 @@
 class Cola:
     def __init__(self):
+        #inicializa una cola vacia representada por una lista
         self.items = []
 
+#añadimos un elemento al final de la cola
     def enqueue(self, elemento):
         self.items.append(elemento)
 
+#se elimina y devuelve el primer elemento de la cola
     def dequeue(self):
+
         if not self.esta_vacia():
             return self.items.pop(0)
         else:
             print("La cola está vacía")
 
+#devuelve el primer elemento de la cola sin eliminarlo
     def front(self):
         if not self.esta_vacia():
             return self.items[0]
         else:
             print("La cola está vacía")
 
+#analiza si la cola esta vacia 
     def esta_vacia(self):
         return len(self.items) == 0
 
@@ -26,7 +32,7 @@ def revertir_mitad_cola(cola):
     # Calculamos la longitud de la cola
     longitud_cola = len(cola.items)
 
-    # Calculamos la mitad de la longitud de la cola
+    # Calculamos el tamaño de la cola dividido 2
     mitad_longitud = longitud_cola // 2
 
     # Desencolamos y apilamos la primera mitad de los elementos en la pila
@@ -42,7 +48,7 @@ def revertir_mitad_cola(cola):
     for _ in range(longitud_cola - mitad_longitud):
         cola.enqueue(cola.dequeue())
 
-# Ejemplo de uso
+#inicializamos un menu
 if __name__ == "__main__":
     # Creamos una cola de ejemplo
     mi_cola = Cola()
