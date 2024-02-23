@@ -1,18 +1,19 @@
 #inicializamos una pila para rastrear los parentesis de apertura
 def paréntesis_balanceados(cadena):
-    pila = [] 
-    parejas = {')': '('} #definimos un diccionario que contiene las parejas de parentesis
+    pila = [] #aqui se almacenaran los parentesis que el ususario ingrese
+    parejas = {')': '('} #definimos un diccionario que contiene las parejas de parentesis, tiene una key y un value
 
-    for carácter in cadena: #iteramos sobre cada caracter en la cadena
+    for carácter in cadena: 
         if carácter in parejas.values(): #si el caracter es un parentesis de apertuda lo añadimos a la pila
             pila.append(carácter)
 
         elif carácter in parejas.keys(): # verifica si el caracter es un parentesis de cierre 
 
-             # Verificamos si la pila está vacía o si el paréntesis de apertura correspondiente no está en el tope de la pila
-            if not pila or parejas[carácter] != pila.pop():
+            
+            #Verifica si la pila está vacía. Si la pila está vacía, significa que no hay ningún paréntesis de apertura que pueda emparejar el paréntesis de cierre actual
+         if not pila or parejas[carácter] != pila.pop(): 
                 return False
-        else:     # Si el carácter no es un paréntesis, continuamos con la siguiente iteración
+        else:    
             continue
 
     return not pila 
