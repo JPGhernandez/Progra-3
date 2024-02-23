@@ -1,6 +1,7 @@
 class Cola:
     def __init__(self):
-        #inicializa una cola vacia representada por una lista
+        #inicializa una cola vacia representada por una lista, aqui se almacenaran temporalmente los elemtos que se van a revertir 
+        
         self.items = []
 
 #añadimos un elemento al final de la cola
